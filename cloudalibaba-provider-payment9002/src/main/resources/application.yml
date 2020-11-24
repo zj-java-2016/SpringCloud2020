@@ -1,0 +1,22 @@
+server:
+  port: 9002
+
+spring:
+  application:
+    name: nacos-payment-provider
+  zipkin:
+    base-url: http://localhost:8411
+  sleuth:
+    sampler:
+      probability: 1
+
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848 #配置Nacos地址
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

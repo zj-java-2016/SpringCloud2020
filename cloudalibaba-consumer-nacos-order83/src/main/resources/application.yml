@@ -1,0 +1,18 @@
+server:
+  port: 83
+
+spring:
+  application:
+    name: nacos-order-consumer
+  zipkin:
+    base-url: http://localhost:9411
+  sleuth:
+    sampler:
+    probability: 1
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848 #配置Nacos地址
+
+service-url:
+  nacos-user-service: http://nacos-payment-provider

@@ -1,0 +1,22 @@
+server:
+  port: 5003
+
+spring:
+  application:
+    name: cloud-storage-demo
+  profiles:
+    active: dev
+  cloud:
+    alibaba:
+      seata:
+        tx-service-group: fsp_tx_group
+    nacos:
+      discovery:
+        server-addr: localhost:8848 #服务注册中心地址
+      config:
+        server-addr: localhost:8848 #配置中心地址
+        file-extension: yaml #指定yaml格式的配置
+#对Feign的支持
+feign:
+  sentinel:
+    enabled: true
